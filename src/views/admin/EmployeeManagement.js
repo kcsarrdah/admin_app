@@ -1,10 +1,9 @@
 import React from "react";
 
 // components
-
 import CardTable from "components/Cards/CardTable.js";
 
-export default function Tables() {
+export default function EmployeeManagement() {
   return (
     <>
       <div className="flex flex-wrap mt-4">

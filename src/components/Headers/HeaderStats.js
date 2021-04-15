@@ -17,27 +17,29 @@ export default function HeaderStats() {
                 <CardStats
                   statSubtitle="Budget Used"
                   statTitle="350,897"
-                  statArrow="up"
-                  statPercent="3.48"
-                  statPercentColor="text-emerald-500"
-                  statDescripiron="Since last month"
-                  statIconName="far fa-chart-bar"
+                  // statArrow="up"
+                  // statPercent="3.48"
+                  // statPercentColor="text-emerald-500"
+                  statDescripiron="last used on"
+                  statDate="5-4-2021"
+                  statIconName="fas fa-money-check-alt"
                   statIconColor="bg-red-500"
                 />
               </div>
-              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="NEW USERS"
-                  statTitle="2,356"
-                  statArrow="down"
-                  statPercent="3.48"
-                  statPercentColor="text-red-500"
-                  statDescripiron="Since last week"
-                  statIconName="fas fa-chart-pie"
-                  statIconColor="bg-orange-500"
+                  statSubtitle="TOTAL BUDGET"
+                  statTitle="250000"
+                  // statArrow="down"
+                  // statPercent="3.48"
+                  // statPercentColor="text-red-500"
+                  statDescripiron="Since added on"
+                  statDate="5-4-2021"
+                  statIconName="fas fa-hand-holding-usd"
+                  statIconColor="bg-emerald-500"
                 />
               </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="SALES"
                   statTitle="924"

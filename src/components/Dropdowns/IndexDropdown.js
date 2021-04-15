@@ -27,8 +27,8 @@ const IndexDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Demo Pages
-      </a>
+        Demo Pages{" "}
+      </a>{" "}
       <div
         ref={popoverDropdownRef}
         className={
@@ -41,73 +41,73 @@ const IndexDropdown = () => {
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          Admin Layout
-        </span>
+          Admin Layout{" "}
+        </span>{" "}
         <Link
-          to="/admin/dashboard"
+          to="/admin/statistics"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Dashboard
-        </Link>
+          Dashboard{" "}
+        </Link>{" "}
         <Link
-          to="/admin/settings"
+          to="admin/perksManagement"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Settings
-        </Link>
+          Settings{" "}
+        </Link>{" "}
         <Link
-          to="/admin/tables"
+          to="/admin/empManagement"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Tables
-        </Link>
+          Tables{" "}
+        </Link>{" "}
         <Link
           to="/admin/maps"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Maps
-        </Link>
+          Maps{" "}
+        </Link>{" "}
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
         <span
           className={
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          Auth Layout
-        </span>
+          Auth Layout{" "}
+        </span>{" "}
         <Link
           to="/auth/login"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Login
-        </Link>
+          Login{" "}
+        </Link>{" "}
         <Link
           to="/auth/register"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Register
-        </Link>
+          Register{" "}
+        </Link>{" "}
         <div className="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
         <span
           className={
             "text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
           }
         >
-          No Layout
-        </span>
+          No Layout{" "}
+        </span>{" "}
         <Link
           to="/landing"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Landing
-        </Link>
+          Landing{" "}
+        </Link>{" "}
         <Link
           to="/profile"
           className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
         >
-          Profile
-        </Link>
-      </div>
+          Profile{" "}
+        </Link>{" "}
+      </div>{" "}
     </>
   );
 };
