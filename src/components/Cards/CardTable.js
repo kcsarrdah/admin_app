@@ -3,31 +3,23 @@ import PropTypes from "prop-types";
 import Spinner from "../Spinner";
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
+import axios from "../../../node_modules/axios/index";
 
 export default function CardTable({ color }) {
-  const [userList, setUserList] = useState();
+  const [userList, setUserList] = useState([]);
 
   useEffect(() => {
-    setUserList([
-      {
-        profileImage:
-          "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
-        name: "Husain Nahrpurawala",
-        perkCoins: 2500,
-        status: true,
-        role: "SDE-1",
-        emailId: "hussainburhanuddin1@gmail.com",
-      },
-      {
-        profileImage:
-          "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
-        name: "Krishnna Sarrdah",
-        perkCoins: 3500,
-        status: false,
-        role: "SDE-2",
-        emailId: "kcsarrdah@gmail.com",
-      },
-    ]);
+    axios
+      .get("http://localhost:3000/admin/employees", {
+        headers: { "x-organizationid": "Krishnna1234" },
+      })
+      .then((resp) => {
+        // console.log(resp);
+        setUserList(resp.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <>
@@ -49,7 +41,7 @@ export default function CardTable({ color }) {
                 Employee Database
               </h3>
             </div>
-            <a href="#">
+            <a href="/admin/addEmployee">
               <button
                 className="text-lightBlue-500 bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
@@ -92,7 +84,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  PerkCoins
+                  Balance
                 </th>
                 <th
                   className={
@@ -137,11 +129,20 @@ export default function CardTable({ color }) {
             <tbody>
               {userList ? (
                 userList.map((User, Indx) => {
+                  let balance = 0;
+                  if (User.Balance)
+                    balance =
+                      User.Balance.totalCredits -
+                      User.Balance.totalConsumedCredits;
                   return (
                     <tr className="hover:bg-blueGray-300">
                       <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                         <img
-                          src={User.profileImage}
+                          src={
+                            User.profileImage
+                              ? User.profileImage
+                              : "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                          }
                           className="h-12 w-12 bg-white rounded-full border object-cover"
                           alt="..."
                         ></img>
@@ -153,14 +154,14 @@ export default function CardTable({ color }) {
                               : "text-white")
                           }
                         >
-                          {User.name}
+                          {User.firstName + " " + User.lastName}
                         </span>
                       </th>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {User.perkCoins}
+                        {balance ? balance : 0}
                       </td>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {User.status ? (
+                        {User.clerkId ? (
                           <>
                             <i className="fas fa-circle text-emerald-500 mr-2"></i>{" "}
                             completed
@@ -173,10 +174,10 @@ export default function CardTable({ color }) {
                         )}
                       </td>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {User.role}
+                        {User.role ? User.role : "No Assigned"}
                       </td>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                        {User.emailId}
+                        {User.email}
                       </td>
                       <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                         <TableDropdown />

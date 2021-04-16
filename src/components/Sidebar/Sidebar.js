@@ -16,6 +16,7 @@ export default function Sidebar() {
       setHighlight(1);
     else if (window.location.href.indexOf("/admin/statistics") !== -1)
       setHighlight(2);
+    else if (window.location.href.indexOf("/profile") !== -1) setHighlight(3);
   }, []);
 
   return (
@@ -155,10 +156,10 @@ export default function Sidebar() {
                       "fas fa-tv mr-2 text-sm " +
                       (highlight === 2 ? "opacity-75" : "text-blueGray-300")
                     }
-                  ></i>{" "}
-                  Metrics And Statistics{" "}
-                </Link>{" "}
-              </li>{" "}
+                  ></i>
+                  Metrics And Statistics
+                </Link>
+              </li>
             </ul>
             {/* Divider */} <hr className="my-4 md:min-w-full" />
             {/* Heading */}
@@ -166,18 +167,29 @@ export default function Sidebar() {
               Other
             </h6>
             {/* Navigation */}
-
             <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
                 <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (highlight === 3
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
                   to="/profile"
+                  onClick={() => {
+                    setHighlight(3);
+                  }}
                 >
-                  <i className="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>{" "}
+                  <i
+                    className={
+                      "fas fa-tv mr-2 text-sm " +
+                      (highlight === 3 ? "opacity-75" : "text-blueGray-300")
+                    }
+                  ></i>{" "}
                   View Profile
                 </Link>
               </li>
-
             </ul>
           </div>{" "}
         </div>{" "}

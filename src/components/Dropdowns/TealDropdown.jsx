@@ -1,14 +1,14 @@
 import React from "react";
-import { createPopper } from '@popperjs/core';
+import { createPopper } from "@popperjs/core";
 
-const Dropdown = () => {
+const Dropdown = (props) => {
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
   const popoverDropdownRef = React.createRef();
   const openDropdownPopover = () => {
     createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-      placement: "bottom-start"
+      placement: "bottom-start",
     });
     setDropdownPopoverShow(true);
   };
@@ -30,7 +30,7 @@ const Dropdown = () => {
                   : openDropdownPopover();
               }}
             >
-              Select a Category
+              Select {props.title}
             </button>
             <div
               ref={popoverDropdownRef}
@@ -39,35 +39,19 @@ const Dropdown = () => {
                 "bg-teal-500 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1 min-w-48"
               }
             >
-              <a
-                href="#pablo"
-                className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
-                onClick={e => e.preventDefault()}
-              >
-                option1
-              </a>
-              <a
-                href="#pablo"
-                className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
-                onClick={e => e.preventDefault()}
-              >
-                Option2
-              </a>
-              <a
-                href="#pablo"
-                className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
-                onClick={e => e.preventDefault()}
-              >
-                Option3
-              </a>
-              <div className="h-0 my-2 border border-solid border-t-0 border-blueGray-800 opacity-25" />
-              <a
-                href="#pablo"
-                className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
-                onClick={e => e.preventDefault()}
-              >
-                Reset
-              </a>
+              {props.list.map((value, index) => {
+                return (
+                  <button
+                    className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
+                    onClick={(e) => {
+                      props.setFunc(value);
+                    }}
+                    value={value}
+                  >
+                    {value}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

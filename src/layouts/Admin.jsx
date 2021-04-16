@@ -13,7 +13,8 @@ import EditProfile from "../views/EditProfile.jsx";
 import Statistics from "views/admin/Statistics.js";
 import PerksManagement from "views/admin/PerksManagement.js";
 import EmployeeManagement from "views/admin/EmployeeManagement.js";
-import OrgProfile from  "../views/Profile"
+import OrgProfile from "../views/Profile";
+import AddEmployee from "components/Cards/AddEmployee.jsx";
 
 export default function Admin() {
   return (
@@ -25,18 +26,20 @@ export default function Admin() {
         <HeaderStats />
         <div className="px-4 md:px-10 mx-auto w-full -m-24">
           <Switch>
+            <Route path="/profile" exact component={OrgProfile} />
+
             <Route
               path="/admin/empManagement"
               exact
               component={EmployeeManagement}
             />
+            <Route path="/admin/addEmployee" exact component={AddEmployee} />
             <Route
               path="/admin/perksManagement"
               exact
               component={PerksManagement}
             />
             <Route path="/admin/statistics" exact component={Statistics} />
-            <Route path="/profile" exact component={OrgProfile} />
 
             <Route
               path="/admin/empManagement/edit"
