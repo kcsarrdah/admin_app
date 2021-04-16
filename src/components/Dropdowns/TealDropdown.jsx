@@ -44,21 +44,21 @@ const Dropdown = () => {
                 className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
                 onClick={e => e.preventDefault()}
               >
-                Action
+                option1
               </a>
               <a
                 href="#pablo"
                 className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
                 onClick={e => e.preventDefault()}
               >
-                Another action
+                Option2
               </a>
               <a
                 href="#pablo"
                 className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
                 onClick={e => e.preventDefault()}
               >
-                Something else here
+                Option3
               </a>
               <div className="h-0 my-2 border border-solid border-t-0 border-blueGray-800 opacity-25" />
               <a
@@ -66,7 +66,7 @@ const Dropdown = () => {
                 className="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white"
                 onClick={e => e.preventDefault()}
               >
-                Seprated link
+                Reset
               </a>
             </div>
           </div>

@@ -19,6 +19,8 @@ export default function CardStats({
                 <div className="flex flex-row p-4">
                     <TealDropdown />
                     <TealDropdown />
+                    <TealDropdown />
+
                     
                 </div>
                 <p className="text-sm m-4 text-lg text-blueGray-400 mt-4">

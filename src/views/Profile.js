@@ -6,7 +6,6 @@ import Footer from "components/Footers/Footer.js";
 export default function Profile() {
   return (
     <>
-      <Navbar transparent />
       <main className="profile-page">
         <section className="relative block h-500-px">
           <div
@@ -61,7 +60,7 @@ export default function Profile() {
                         className="bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
                         type="button"
                       >
-                        Connect
+                        Edit
                       </button>
                     </div>
                   </div>
@@ -72,7 +71,7 @@ export default function Profile() {
                           22
                         </span>
                         <span className="text-sm text-blueGray-400">
-                          Friends
+                          Employees
                         </span>
                       </div>
                       <div className="mr-4 p-3 text-center">
@@ -80,7 +79,7 @@ export default function Profile() {
                           10
                         </span>
                         <span className="text-sm text-blueGray-400">
-                          Photos
+                          Active years
                         </span>
                       </div>
                       <div className="lg:mr-4 p-3 text-center">
@@ -88,7 +87,7 @@ export default function Profile() {
                           89
                         </span>
                         <span className="text-sm text-blueGray-400">
-                          Comments
+                          Perks Active
                         </span>
                       </div>
                     </div>
@@ -96,11 +95,11 @@ export default function Profile() {
                 </div>
                 <div className="text-center mt-12">
                   <h3 className="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-                    Jenna Stones
+                    Org Name
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
                     <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>{" "}
-                    Los Angeles, California
+                    Location
                   </div>
                   <div className="mb-2 text-blueGray-600 mt-10">
                     <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
@@ -115,19 +114,8 @@ export default function Profile() {
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                        An artist of considerable range, Jenna the name taken by
-                        Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                        performs and records all of his own music, giving it a
-                        warm, intimate feel with a solid groove structure. An
-                        artist of considerable range.
+                        Description Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                       </p>
-                      <a
-                        href="#pablo"
-                        className="font-normal text-lightBlue-500"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        Show more
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -136,7 +124,6 @@ export default function Profile() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

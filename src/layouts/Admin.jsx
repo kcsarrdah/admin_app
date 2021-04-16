@@ -13,6 +13,7 @@ import EditProfile from "../views/EditProfile.jsx";
 import Statistics from "views/admin/Statistics.js";
 import PerksManagement from "views/admin/PerksManagement.js";
 import EmployeeManagement from "views/admin/EmployeeManagement.js";
+import OrgProfile from  "../views/Profile"
 
 export default function Admin() {
   return (
@@ -35,6 +36,7 @@ export default function Admin() {
               component={PerksManagement}
             />
             <Route path="/admin/statistics" exact component={Statistics} />
+            <Route path="/profile" exact component={OrgProfile} />
 
             <Route
               path="/admin/empManagement/edit"
